@@ -1,0 +1,18 @@
+<div *ngIf="question">
+  <div class="wrapper container">
+      <p>{{timer_message}}</p>
+    <form #questionForm="ngForm"  class="form-group">
+      <span class="badge">?</span> {{ question.text }} 
+      <h3><div class="seconds">{{ seconds }}</div></h3>
+      <ul class="list-group">
+        <li *ngFor='let answer of question.answers' class="list-group-item">
+          <label class="answer_label"><input [(ngModel)]="answer.correct"  type="checkbox" name="answer.correct" > {{ answer.text }}</label> 
+        </li>
+      </ul>
+       <button type="submit" class="btn btn-success" (click)="onSubmit()">Next</button>
+    </form>
+  </div>
+</div>
+<div *ngIf="result">
+  Your result - {{ result.text }}
+</div>

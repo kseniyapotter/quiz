@@ -1,0 +1,9 @@
+<div *ngIf="question">
+  <h2>{{ question.text }}</h2>
+  <ul class="answers">
+    <li *ngFor='let answer of answers'>
+      <span class="badge">{{answer.id}}</span> {{answer.text}}
+      <input [(ngModel)]="answer.correct" placeholder="correct" type="checkbox"/>
+    </li>
+  </ul>
+</div>

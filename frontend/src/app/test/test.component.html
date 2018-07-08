@@ -1,0 +1,9 @@
+<div *ngIf="!questions" class="wrapper container">
+  <h2>Online Tests</h2>
+  <div class="list-group">
+    <div *ngFor='let test of test_list'>
+      <button class="list-group-item" (click)="onClickMe(test.id)">{{ test.name }} -  {{ test.text }}</button>
+      </div>
+    </div>
+</div>
+  <app-question-form *ngIf="questions" [questions]="questions" [test_id]="test_id" ></app-question-form>
